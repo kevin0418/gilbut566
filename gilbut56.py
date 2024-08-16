@@ -1,11 +1,13 @@
 import streamlit as st
+import streamlit as st
+import tiktoken
+
+OPENAI_API_KEY = st.secrets["api_keys"]["my_api_key"]
+
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
-import os
-#os.environ["OPENAI_API_KEY"] = "sk-" #openai 키 입력
-OPENAI_API_KEY = st.secrets["api_keys"]["my_api_key"]
 
 # 웹페이지에 보여질 내용
 langs = ["Korean", "English", "chinese" , "Japanese"]  #번역을 할 언어를 나열
